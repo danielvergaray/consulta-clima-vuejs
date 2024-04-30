@@ -37,3 +37,4 @@ const {obtenerClima, clima, mostrarClima, cargando, error} = useClima()
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
+ <!-- https://openweathermap.org/api -->

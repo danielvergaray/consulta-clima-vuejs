@@ -14,14 +14,14 @@ export default function useClima() {
     clima.value={}
     error.value= ''
     try {
-      // Obtener la altitud y longitud
+      // Obtener la altitud y longitud (Geocoding api)
       const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${key}`;
 
       const { data } = await axios(url);
 
       const { lat, lon } = data[0]; /* Desestructuracion las variables vienen de la api */
 
-      // Obtener el clima
+      // Obtener el clima (current weather data)
       const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
 
       const { data: resultado } = await axios(
